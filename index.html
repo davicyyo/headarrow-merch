@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>HeadArrow Merch</title>
+  </head>
+  <body>
+    <div id="myShop">
+      <a href="https://headarrow.myspreadshop.com">headarrow</a>
+    </div>
+
+    <script>
+      var spread_shop_config = {
+        shopName: "headarrow",
+        locale: "us_US",
+        prefix: "https://headarrow.myspreadshop.com",
+        baseId: "myShop",
+      };
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://headarrow.myspreadshop.com/shopfiles/shopclient/shopclient.nocache.js"
+    ></script>
+
+    <script>
+      const hideCredits = () => {
+        const targets = document.querySelectorAll(
+          'a[href*="spreadshirt"], a[href*="spreadshop"], .shop-footer, .shop-branding'
+        );
+        targets.forEach((el) => el.remove());
+      };
+
+      const interval = setInterval(() => {
+        hideCredits();
+
+        if (performance.now() > 5000) clearInterval(interval);
+      }, 500);
+    </script>
+  </body>
+</html>
